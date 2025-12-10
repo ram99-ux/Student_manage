@@ -9,7 +9,12 @@ import Db_connect from "./DB/Data.mjs";
 const app = express();
 Db_connect()
 
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    optionsSuccessStatus: 200
+}));
 app.use(express.json());
 app.use(router);
 app.use(AdminRouter);

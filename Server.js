@@ -5,6 +5,7 @@ import AdminRouter from "./Routes/Admin_route.mjs";
 import Db_connect from "./DB/Data.mjs";
 
 
+
 const app = express();
 Db_connect()
 
@@ -13,4 +14,5 @@ app.use(express.json());
 app.use(router);
 app.use(AdminRouter);
 
-app.listen(4000, () => console.log("Server running on port 4000"));
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log("Server running on port " + PORT));

@@ -10,7 +10,7 @@ const app = express();
 Db_connect()
 
 app.use(cors({
-    origin: {"http://localhost:3000","https://ram99-ux.github.io"}
+    origin: ["http://localhost:3000","https://ram99-ux.github.io"]
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     optionsSuccessStatus: 200
